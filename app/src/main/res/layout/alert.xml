@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wee.digital.widget.custom.base.DialogLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutContent"
+    style="@style/MatchParent">
+
+    <wee.digital.widget.custom.base.AppConstraintLayout
+        android:id="@+id/layoutBottom"
+        style="@style/Dialog.BottomLayout"
+        android:minHeight="300dp"
+        android:paddingBottom="@dimen/contentMargin48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewIcon"
+            style="@style/Dialog.Icon"
+            android:layout_marginTop="@dimen/contentMargin48"
+            android:layout_marginBottom="@dimen/contentMargin48"
+            android:src="@drawable/ic_close"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            style="@style/Dialog.MessageTitle"
+            android:layout_marginTop="@dimen/contentMargin48"
+            android:layout_marginBottom="@dimen/contentMargin24"
+            android:text="@string/app_name"
+            app:layout_constraintBottom_toTopOf="@+id/textViewMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessage"
+            style="@style/Dialog.Message"
+            android:layout_marginStart="@dimen/contentMargin24"
+            android:layout_marginEnd="@dimen/contentMargin24"
+            android:layout_marginBottom="@dimen/contentMargin48"
+            android:minLines="2"
+            app:layout_constraintBottom_toTopOf="@+id/viewAccept"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:maxLines="8"
+            tools:text="@tools:sample/lorem/random" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/viewAccept"
+            style="@style/Button.Primary"
+            android:layout_marginStart="@dimen/contentMargin24"
+            android:layout_marginTop="@dimen/contentMargin48"
+            android:layout_marginEnd="@dimen/contentMargin24"
+            android:layout_marginBottom="@dimen/contentMargin24"
+            app:layout_constraintBottom_toTopOf="@+id/viewCancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Accept" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/viewCancel"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/contentMargin24"
+            android:layout_marginTop="@dimen/contentMargin24"
+            android:layout_marginEnd="@dimen/contentMargin24"
+            android:textColor="@color/colorTextDefault"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Cancel" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/viewClose"
+            style="@style/Dialog.CloseButton"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </wee.digital.widget.custom.base.AppConstraintLayout>
+
+</wee.digital.widget.custom.base.DialogLayout>

@@ -1,0 +1,66 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+    id "kotlin-kapt"
+}
+
+android {
+    compileSdkVersion builds.compile_sdk
+    defaultConfig {
+        minSdkVersion builds.min_sdk
+        targetSdkVersion builds.target_sdk
+        consumerProguardFiles "consumer-rules.pro"
+    }
+    buildTypes {
+        all {
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+        release {
+            minifyEnabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral()
+    maven { url "https://maven.google.com" }
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+
+    implementation fileTree(include: ["*.jar", "*aar"], dir: "libs")
+
+    // kotlin
+    implementation deps.kotlin.stdlib
+
+    // android
+    implementation deps.android.corektx
+    implementation deps.android.appcompat
+    implementation deps.android.activity
+    implementation deps.android.constraintlayout
+    implementation deps.android.fragment
+    implementation deps.android.security
+
+    // android lifecycle aware
+    implementation deps.lifecycle.viewmodel
+    implementation deps.lifecycle.livedata
+    kapt deps.lifecycle.compiler
+
+    // json convert
+    implementation deps.google.gson
+
+}
+

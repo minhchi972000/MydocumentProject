@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchParent">
+
+    <FrameLayout
+        android:id="@+id/otpView0"
+        style="@style/OtpView.Background"
+        app:layout_constraintEnd_toStartOf="@+id/otpView1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/otpTextView0"
+            style="@style/OtpView.Char"
+            tools:text="2" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/otpView1"
+        style="@style/OtpView.Background"
+        app:layout_constraintEnd_toStartOf="@+id/otpView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/otpView0"
+        app:layout_constraintTop_toTopOf="@id/otpView0">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/otpTextView1"
+            style="@style/OtpView.Char"
+            tools:text="0" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/otpView2"
+        style="@style/OtpView.Background"
+        app:layout_constraintEnd_toStartOf="@+id/otpView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/otpView1"
+        app:layout_constraintTop_toTopOf="@+id/otpView0">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/otpTextView2"
+            style="@style/OtpView.Char"
+            tools:text="4" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/otpView3"
+        style="@style/OtpView.Background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/otpView2"
+        app:layout_constraintTop_toTopOf="@+id/otpView0">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/otpTextView3"
+            style="@style/OtpView.Char"
+            tools:text="8" />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/otpEditText"
+        style="@style/EditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:cursorVisible="false"
+        android:inputType="number"
+        android:textColor="@color/color_transparent"
+        android:textCursorDrawable="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/otpView0"
+        app:layout_constraintEnd_toEndOf="@id/otpView3"
+        app:layout_constraintStart_toStartOf="@id/otpView0"
+        app:layout_constraintTop_toTopOf="@+id/otpView0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/otpTextViewError"
+        style="@style/TextView.Error"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/contentMargin24"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/textSize12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otpView0"
+        tools:text="error text goes here" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/otpTextViewHint"
+        style="@style/TextView"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/textSize12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otpTextViewError"
+        tools:text="hint text goes here" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

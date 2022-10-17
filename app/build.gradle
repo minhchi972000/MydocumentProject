@@ -1,0 +1,165 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "kotlin-kapt"
+    id "com.google.gms.google-services"
+}
+
+apply plugin: "com.google.gms.google-services"
+
+android {
+    compileSdkVersion builds.compile_sdk
+    defaultConfig {
+        applicationId "wee.digital.sample"
+        minSdkVersion builds.min_sdk
+        targetSdkVersion builds.target_sdk
+        versionCode builds.version_code
+        versionName builds.version_name
+        vectorDrawables.useSupportLibrary true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    flavorDimensions "default"
+    testOptions {
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    signingConfigs {
+        release {
+        }
+    }
+    buildTypes {
+        all {
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+        release {
+            signingConfig signingConfigs.release
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+    productFlavors {
+        all { flavor ->
+        }
+        dev {
+            resValue "string", "app_name", "Sample Dev"
+            applicationIdSuffix ".dev"
+        }
+        prod {
+            resValue "string", "app_name", "Sample"
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ["libs"]
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    androidResources {
+        noCompress 'tflite'
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ["*.jar", "*aar"], dir: "libs")
+
+    //Utils lib
+    implementation project(":library")
+
+    //Widgets lib
+    implementation project(":widget")
+
+    //Kotlin
+    implementation deps.kotlin.stdlib
+    // concurrency pattern
+    implementation deps.kotlin.coroutines_core
+    implementation deps.kotlin.coroutines_android
+
+    //Android
+    implementation deps.android.activity
+    implementation deps.android.animation
+    implementation deps.android.annotation
+    implementation deps.android.appcompat
+    implementation deps.android.browser
+    implementation deps.android.cardview
+    implementation deps.android.constraintlayout
+    implementation deps.android.corektx
+    implementation deps.android.fragment
+    implementation deps.android.multidex
+    implementation deps.android.recyclerview
+    implementation deps.android.security
+    implementation deps.android.swiperefreshlayout
+    implementation deps.android.vectordrawable
+    implementation deps.android.viewpager
+
+    //Google
+    implementation deps.google.material
+    implementation deps.google.gson
+
+    //Fragment navigation
+    implementation deps.navigation.fragment
+    implementation deps.navigation.ui
+
+    //Paging recycler view adapter
+    implementation deps.paging.runtime
+
+    //Android lifecycle aware
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.viewmodel
+    implementation deps.lifecycle.livedata
+    implementation 'androidx.window:window:1.0.0'
+    implementation 'com.google.mlkit:vision-common:17.2.1'
+    kapt deps.lifecycle.compiler
+
+    //SQLite database orm
+    implementation deps.room.runtime
+    annotationProcessor deps.room.compiler
+    kapt deps.room.compiler
+
+    //Http client, RestFUL api
+    implementation deps.square.retrofit
+    implementation deps.square.gson
+    implementation deps.square.okhttp
+    implementation deps.square.okhttp_log
+    implementation deps.square.okhttp_url
+
+    //Dimension resources
+    implementation deps.dimens.sdp
+    implementation deps.dimens.ssp
+
+    //Firebase sdk
+    implementation platform(deps.firebase.bom)
+    implementation deps.firebase.analytics
+    implementation deps.firebase.auth
+    implementation deps.firebase.firestore
+    implementation deps.firebase.storage
+    implementation deps.firebase.messaging
+
+    //Rounded/oval image view
+    implementation deps.rounded_image_view
+
+    // camera
+    implementation("androidx.camera:camera-core:1.2.0-beta02")
+    implementation("androidx.camera:camera-camera2:1.2.0-beta02")
+    implementation("androidx.camera:camera-lifecycle:1.2.0-beta02")
+    implementation("androidx.camera:camera-view:1.2.0-beta02")
+    implementation("androidx.camera:camera-mlkit-vision:1.2.0-beta02")
+    implementation("androidx.camera:camera-extensions:1.2.0-beta02")
+
+}
+

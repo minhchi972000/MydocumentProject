@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_wg_input_message">message…</string>
+    <string name="chat_title">Chats</string>
+    <string name="sleep_moon">sleep moon</string>
+    <string name="made_copy_by">Made copy by \nMinh Chi</string>
+
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wee.digital.widget.custom.base.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/avatarView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drw_oval"
+    android:backgroundTint="@color/color_white"
+    android:padding="1px">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/drw_oval"
+        android:backgroundTint="@color/color_primary" />
+
+    <wee.digital.widget.custom.base.AppTextView
+        android:id="@+id/textViewName"
+        style="@style/TextView"
+        android:layout_gravity="center"
+        android:textAllCaps="true"
+        android:textColor="@color/color_white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="AB" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageViewAvatar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        app:riv_oval="true" />
+
+</wee.digital.widget.custom.base.SquareLayout>

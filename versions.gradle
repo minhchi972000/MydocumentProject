@@ -1,0 +1,285 @@
+def builds = [:]
+builds.min_sdk = 21
+builds.compile_sdk = 33
+builds.target_sdk = 33
+builds.version_code = 1
+builds.version_name = "1.0.0"
+ext.builds = builds
+
+def deps = [:]
+ext.deps = deps
+
+/**
+ * Kotlin
+ * [https://kotlinlang.org/]
+ */
+def kotlin = [:]
+kotlin.version = '1.6.21'
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin.version"
+kotlin.gradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin.version"
+kotlin.extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin.version"
+kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$kotlin.version"
+
+/**
+ * Concurrency design pattern
+ * [https://developer.android.com/kotlin/coroutines]
+ */
+kotlin.coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt"
+kotlin.coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2-native-mt"
+deps.kotlin = kotlin
+
+/**
+ * AndroidX
+ * [https://developer.android.com/jetpack/androidx/versions/stable-channel]
+ */
+def android = [:]
+android.corektx = "androidx.core:core-ktx:1.7.0"
+android.appcompat = "androidx.appcompat:appcompat:1.4.1"
+android.activity = "androidx.activity:activity-ktx:1.4.0"
+android.fragment = "androidx.fragment:fragment-ktx:1.4.1"
+android.animation = "androidx.compose.animation:animation:1.1.1"
+android.recyclerview = "androidx.recyclerview:recyclerview:1.2.1"
+android.cardview = "androidx.cardview:cardview:1.0.0"
+android.constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.3"
+android.swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+android.vectordrawable = "androidx.vectordrawable:vectordrawable:1.1.0"
+android.vectordrawable_animated = "androidx.vectordrawable:vectordrawable-animated:1.1.0"
+android.browser = "androidx.browser:browser:1.4.0"
+android.coordinatorlayout = "androidx.coordinatorlayout:coordinatorlayout:1.2.0"
+android.annotation = "androidx.annotation:annotation:1.3.0"
+android.exifinterface = "androidx.exifinterface:exifinterface:1.3.2"
+android.legacy = "androidx.legacy:legacy-support-core-ui:1.0.0"
+android.legacy_v4 = "androidx.legacy:legacy-support-v4:1.0.0"
+android.media = "androidx.media:media:1.6.0"
+android.multidex = "androidx.multidex:multidex:2.0.1"
+android.print = "androidx.print:print:1.0.0"
+android.viewpager = "androidx.viewpager2:viewpager2:1.0.0"
+android.security = "androidx.security:security-crypto:1.0.0"
+deps.android = android
+
+/**
+ * Fragment navigation
+ * [https://developer.android.com/guide/navigation]
+ */
+def navigation = [:]
+navigation.version = "2.4.2"
+navigation.safe_args = "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation.version"
+navigation.fragment = "androidx.navigation:navigation-fragment-ktx:$navigation.version"
+navigation.ui = "androidx.navigation:navigation-ui-ktx:$navigation.version"
+navigation.test = "androidx.navigation:navigation-testing:$navigation.version" //androidTestImplementation
+deps.navigation = navigation
+
+/**
+ * SQLite database object relational mapping
+ * [https://developer.android.com/jetpack/androidx/releases/room]
+ */
+def room = [:]
+room.version = "2.4.2"
+room.runtime = "androidx.room:room-runtime:$room.version"
+room.compiler = "androidx.room:room-compiler:$room.version"
+deps.room = room
+
+/**
+ * Lifecycle-aware components
+ * [https://developer.android.com/jetpack/androidx/releases/lifecycle]
+ */
+def lifecycle = [:]
+lifecycle.version = '2.4.1'
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle.version"
+lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle.version"
+lifecycle.livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle.version"
+lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$lifecycle.version"
+lifecycle.process = "androidx.lifecycle:lifecycle-process:$lifecycle.version"
+lifecycle.streams = "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle.version"
+deps.lifecycle = lifecycle
+
+/**
+ * Recycler view adapter paging
+ * [https://developer.android.com/jetpack/androidx/releases/paging]
+ */
+def paging = [:]
+paging.version = "3.1.1"
+paging.runtime = "androidx.paging:paging-runtime-ktx:$paging.version"
+paging.rx = "androidx.paging:paging-rxjava3:$paging.version"
+deps.paging = paging
+
+/**
+ * Schedule deferrable, Asynchronous tasks
+ * [https://developer.android.com/jetpack/androidx/releases/work]
+ */
+def work = [:]
+work.version = "2.7.1"
+work.java = "androidx.work:work-runtime:$work.version" // Java only
+work.ktx = "androidx.work:work-runtime-ktx:$work.version" // Kotlin + coroutines
+work.rx = "androidx.work:work-rxjava2:$work.version"
+work.gcm = "androidx.work:work-gcm:$work.version"
+work.test = "androidx.work:work-testing:$work.version"
+work.multiprocess = "androidx.work:work-multiprocess:$work.version"
+deps.work = work
+
+/**
+ * CameraX
+ * [https://developer.android.com/training/camerax]
+ */
+def camera = [:]
+camera.core = "androidx.camera:camera-camera2:1.0.1"
+camera.camera2 = "androidx.camera:camera-camera2:1.0.1"
+camera.lifecycle = "androidx.camera:camera-lifecycle:1.0.1"
+camera.view = "androidx.camera:camera-view:1.0.0-alpha28"
+camera.extension = "androidx.camera:camera-extensions:1.0.0-alpha28"
+deps.camera = camera
+
+/**
+ * Google services
+ */
+def google = [:]
+google.services = "com.google.gms:google-services:4.3.10"
+google.map = "com.google.android.gms:play-services-maps:17.0.0"
+google.gson = "com.google.code.gson:gson:2.8.6"
+google.material = "com.google.android.material:material:1.5.0"
+deps.google = google
+
+/**
+ * Development apis
+ * [https://firebase.google.com/docs]
+ */
+def firebase = [:]
+firebase.bom = "com.google.firebase:firebase-bom:29.0.4"
+firebase.core = "com.google.firebase:firebase-core"
+firebase.analytics = "com.google.firebase:firebase-analytics-ktx"
+firebase.auth = "com.google.firebase:firebase-auth-ktx"
+firebase.crashlytics = "com.google.firebase:firebase-crashlytics-ktx"
+firebase.database = "com.google.firebase:firebase-database-ktx"
+firebase.firestore = "com.google.firebase:firebase-firestore-ktx"
+firebase.messaging = "com.google.firebase:firebase-messaging-ktx"
+firebase.storage = "com.google.firebase:firebase-storage-ktx"
+deps.firebase = firebase
+
+/**
+ * Machine learning
+ * [https://developers.google.com/ml-kit]
+ * [https://developers.google.com/ml-kit/release-notes]
+ */
+def ml = [:]
+// bundle the model
+ml.face_detection = "com.google.mlkit:face-detection:16.1.2"
+ml.barcode_scanning = "com.google.mlkit:barcode-scanning:17.0.0"
+ml.image_labeling = "com.google.mlkit:image-labeling:17.0.5"
+ml.image_labeling_custom = "com.google.mlkit:image-labeling-custom:16.3.1"
+ml.language_id = "com.google.mlkit:language-id:17.0.0"
+ml.text_recognition = "com.google.mlkit:text-recognition:17.0.0"
+ml.segmentation_selfie = "com.google.mlkit:segmentation-selfie:16.0.0-beta2"
+ml.pose_detection = "com.google.mlkit:pose-detection:17.0.1-beta5"
+ml.pose_detection_accurate = "com.google.mlkit:pose-detection-accurate:17.0.1-beta5"
+ml.camera = "com.google.mlkit:camera:16.0.0-beta1"
+// dynamically downloaded model in Google Play Service
+ml.face_detection_gms = 'com.google.android.gms:play-services-mlkit-face-detection:16.2.0'
+ml.barcode_scanning_gms = "com.google.android.gms:play-services-mlkit-barcode-scanning:16.2.1"
+ml.image_labeling_gms = "com.google.android.gms:play-services-mlkit-image-labeling:16.0.5"
+ml.language_id_gms = "com.google.android.gms:play-services-mlkit-language-id:16.0.0-beta1"
+ml.text_recognition_gms = "com.google.android.gms:play-services-mlkit-text-recognition:17.0.0"
+deps.ml = ml
+
+
+/**
+ * Reactive programming
+ * [http://reactivex.io/]
+ */
+def reactivex = [:]
+reactivex.java = "io.reactivex.rxjava2:rxjava:2.2.21"
+reactivex.android = "io.reactivex.rxjava2:rxandroid:2.1.1"
+reactivex.kotlin = "io.reactivex.rxjava2:rxkotlin:2.4.0"
+reactivex.binding = "com.jakewharton.rxbinding2:rxbinding-kotlin:2.2.0"
+deps.reactivex = reactivex
+
+/**
+ * RestFUL api client
+ * [https://square.github.io/retrofit/]
+ */
+def square = [:]
+square.retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+square.gson = "com.squareup.retrofit2:converter-gson:2.9.0"
+square.rx_adapter = "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
+square.okhttp = "com.squareup.okhttp3:okhttp:3.12.0"
+square.okhttp_log = "com.squareup.okhttp3:logging-interceptor:4.9.0"
+square.okhttp_url = "com.squareup.okhttp3:okhttp-urlconnection:4.7.2"
+deps.square = square
+
+/**
+ * Socket IO client
+ * [https://github.com/socketio/socket.io-client-java]
+ */
+deps.socket_io_client = "io.socket:socket.io-client:1.0.0" // { exclude group: "org.json", module: "json" }
+
+/**
+ * Asynchronous image load
+ */
+def glide = [:]
+glide.version = "4.12.0"
+glide.glide = "com.github.bumptech.glide:glide:$glide.version"
+glide.compiler = "com.github.bumptech.glide:compiler:$glide.version"
+deps.glide = glide
+
+/**
+ * Multi dimension resources
+ * [https://github.com/intuit/sdp]
+ * [https://github.com/intuit/ssp]
+ */
+def dimens = [:]
+dimens.sdp = "com.intuit.sdp:sdp-android:1.0.6"
+dimens.ssp = "com.intuit.ssp:ssp-android:1.0.6"
+deps.dimens = dimens
+
+/**
+ * Diagonal layout
+ * [https://github.com/IntruderShanky/Squint]
+ */
+deps.squint = "com.github.IntruderShanky:Squint:3.0.1"
+
+/**
+ * Rounded, Oval, Circular image view
+ * [https://github.com/vinc3m1/RoundedImageView]
+ */
+deps.rounded_image_view = "com.makeramen:roundedimageview:2.3.0"
+
+/**
+ * Expandable/collapsible layout
+ * [https://github.com/skydoves/ExpandableLayout]
+ */
+deps.expandable_layout = "net.cachapa.expandablelayout:expandablelayout:2.9.2"
+
+/**
+ * Ken burns anim
+ * [https://github.com/flavioarfaria/KenBurnsView]
+ */
+deps.kenburns_view = "com.flaviofaria:kenburnsview:1.0.7"
+
+/**
+ * [https://github.com/aurelhubert/ahbottomnavigation]
+ */
+deps.bottom_navigation = "com.aurelhubert:ahbottomnavigation:2.3.4"
+
+/**
+ * [https://github.com/CanHub/Android-Image-Cropper]
+ */
+deps.image_cropper = "com.github.CanHub:Android-Image-Cropper:3.2.0"
+
+/**
+ * [https://github.com/mmin18/RealtimeBlurView]
+ *
+ * App gradle:
+ * android {*      defaultConfig {*          minSdkVersion builds.min_sdk
+ *          renderscriptTargetApi builds.min_sdk
+ *          renderscriptSupportModeEnabled true
+ *}*}*
+ * Proguard:
+ *  -keep class android.support.v8.renderscript.** { *; }*  -keep class androidx.renderscript.** { *; }*
+ * Layout:
+ * <com.github.mmin18.widget.RealtimeBlurView
+ *      android:layout_width="match_parent"
+ *      android:layout_height="match_parent"
+ *      app:realtimeBlurRadius="20dp"
+ *      app:realtimeOverlayColor="#8000" />
+ *
+ */
+deps.blur_view = 'com.github.mmin18:realtimeblurview:1.2.1'

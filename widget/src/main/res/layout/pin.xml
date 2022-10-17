@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pinTextViewHolder"
+        style="@style/PinTextView"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/pinEditText"
+        style="@style/PinTextView"
+        android:layout_gravity="center"
+        android:inputType="number"
+        android:textColor="@color/color_primary"
+        android:textColorHint="@color/color_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pinTextViewHolder"
+        tools:text="●●●" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pinTextViewError"
+        style="@style/TextView.Error"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/contentMargin12"
+        android:gravity="center_horizontal"
+        android:minLines="2"
+        android:textColor="@color/color_error"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pinTextViewHolder"
+        tools:text="error text goes here" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

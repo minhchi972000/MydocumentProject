@@ -1,0 +1,4 @@
+rootProject.name = "Sample"
+include ':widget'
+include ':library'
+include ':app'

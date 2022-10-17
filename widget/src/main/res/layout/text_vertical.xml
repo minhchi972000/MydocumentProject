@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wee.digital.widget.custom.base.AppConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textContentLayout"
+    style="@style/MatchWidth"
+    android:clickable="false"
+    android:paddingTop="@dimen/contentMargin16"
+    android:paddingBottom="@dimen/contentMargin16"
+    app:radius="@dimen/rowRadius">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewDrawableStart"
+        android:layout_width="@dimen/rowSize"
+        android:layout_height="@dimen/rowSize"
+        android:layout_marginStart="@dimen/contentMargin16"
+        android:background="@drawable/drw_oval"
+        android:backgroundTint="#BEE0FF"
+        android:clickable="false"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        style="@style/TextView"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/contentMargin16"
+        android:clickable="false"
+        android:ellipsize="end"
+        android:textColor="@color/colorTextDefault"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPlaceHolder"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewDrawableEnd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewDrawableStart"
+        app:layout_constraintTop_toTopOf="@+id/imageViewDrawableStart"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Text" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPlaceHolder"
+        style="@style/TextView"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewDrawableStart"
+        app:layout_constraintStart_toStartOf="@id/textViewTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        tools:text="     " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewProperty"
+        style="@style/TextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:paddingEnd="@dimen/contentMargin12"
+        android:textColor="@color/colorHint"
+        android:textSize="@dimen/textSize12"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewDrawableEnd"
+        app:layout_constraintStart_toStartOf="@+id/textViewPlaceHolder"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        tools:maxLines="2"
+        tools:text="@tools:sample/lorem/random" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewDrawableEnd"
+        android:layout_width="@dimen/rowSizeD2"
+        android:layout_height="0dp"
+        android:background="@color/color_transparent"
+        android:clickable="true"
+        android:paddingEnd="@dimen/contentMargin12"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewDrawableStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewDrawableStart" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/contentMargin12"
+        android:thumb="@drawable/switch_thumb"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewDrawableStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:track="@drawable/switch_track"
+        tools:visibility="visible" />
+
+</wee.digital.widget.custom.base.AppConstraintLayout>

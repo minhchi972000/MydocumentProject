@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wee.digital.widget.custom.base.DialogLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutContent"
+    style="@style/MatchParent">
+
+    <wee.digital.widget.custom.StatusBarView
+        android:id="@+id/statusBarView"
+        style="@style/App.StatusBarHolder" />
+
+    <wee.digital.widget.custom.base.AppConstraintLayout
+        style="@style/Dialog.BottomLayout"
+        android:layout_height="wrap_content"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statusBarView"
+        app:layout_constraintVertical_bias="1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            style="@style/Dialog.Title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/viewClose"
+            style="@style/Dialog.CloseButton"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/galleryLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/viewSeparator"
+            style="@style/VerticalSeparator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessage"
+            style="@style/TextView"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/contentMargin24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+            tools:maxLines="3"
+            tools:text="@tools:sample/lorem/random" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            style="@style/RecyclerView"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/contentMargin24"
+            android:layout_marginBottom="@dimen/contentMargin48"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewMessage"
+            tools:itemCount="4"
+            tools:listitem="@layout/selectable_item" />
+
+    </wee.digital.widget.custom.base.AppConstraintLayout>
+
+</wee.digital.widget.custom.base.DialogLayout>

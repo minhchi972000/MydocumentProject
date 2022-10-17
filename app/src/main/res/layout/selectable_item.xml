@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutItem"
+    style="@style/MatchWidth"
+    android:layout_marginBottom="@dimen/contentMargin12"
+    android:clickable="true">
+
+    <wee.digital.widget.custom.TextVerticalView
+        android:id="@+id/selectableTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/contentMargin24"
+        android:layout_marginEnd="@dimen/contentMargin24"
+        android:backgroundTint="@color/color_primary_light"
+        android:checkable="false"
+        android:clickable="false"
+        android:drawableStart="@drawable/ic_placeholder"
+        android:drawableTint="@color/color_white"
+        android:tint="@color/color_primary"
+        android:title="Item title"
+        app:backgroundColor="@color/colorHint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeLineColor="@color/colorLight"
+        app:strokeLineWidth="1dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewCheck"
+        style="@style/Button.CheckBox"
+        android:layout_margin="@dimen/contentMargin24"
+        android:clickable="false"
+        android:src="@drawable/ic_checkbox_uncheck2"
+        app:layout_constraintBottom_toBottomOf="@+id/selectableTextView"
+        app:layout_constraintEnd_toEndOf="@+id/selectableTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

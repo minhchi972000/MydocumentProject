@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    style="@style/MatchParent"
+    android:layout_height="wrap_content">
+
+<!--    <wee.digital.widget.custom.UOptionView-->
+<!--        android:id="@+id/viewOption"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginHorizontal="@dimen/_20sdp"-->
+<!--        app:optSrcIcon="@drawable/ic_phone_book"-->
+<!--        style="@style/InputView"-->
+<!--        app:optTintIcon="@color/color_white"-->
+<!--        app:optBgColorIcon="@color/colorSecondary"-->
+<!--        android:layout_marginVertical="@dimen/_4sdp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/viewDecor"-->
+<!--        app:optSrcArrowRight="@drawable/ic_arrow_right"-->
+<!--        android:layout_height="wrap_content" />-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/viewOption"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        tools:text="Hello"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        style="@style/InputView"
+        android:layout_marginVertical="@dimen/_4sdp"
+        app:layout_constraintBottom_toTopOf="@id/viewDecor"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/viewDecor"
+        android:background="@color/mdtp_dark_gray"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="@id/viewOption"
+        app:layout_constraintEnd_toEndOf="@id/viewOption"
+        app:layout_constraintTop_toBottomOf="@+id/viewOption"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:layout_height="1dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

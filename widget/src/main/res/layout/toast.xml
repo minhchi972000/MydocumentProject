@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:background="@color/colorDialogBackground">
+
+    <wee.digital.widget.custom.base.AppConstraintLayout
+        android:id="@+id/toastLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="@dimen/contentMargin24"
+        android:layout_marginEnd="@dimen/contentMargin24"
+        android:layout_marginBottom="@dimen/contentMargin24"
+        android:minHeight="@dimen/rowSize"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:radius="@dimen/rowRadius"
+        app:strokeLineColor="@color/color_success"
+        app:strokeLineWidth="2dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewIcon"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/contentMargin24"
+            android:src="@drawable/ic_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessage"
+            style="@style/TextView"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/contentMargin24"
+            android:layout_marginEnd="@dimen/contentMargin24"
+            android:includeFontPadding="false"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewIcon"
+            app:layout_constraintTop_toTopOf="@+id/imageViewIcon"
+            tools:maxLines="3"
+            tools:text="@tools:sample/lorem/random" />
+
+
+    </wee.digital.widget.custom.base.AppConstraintLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

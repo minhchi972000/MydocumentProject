@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="wee.digital.sample.ui.fragment.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/home" />
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment" />
+    <fragment
+        android:id="@+id/motionFragment"
+        android:name="wee.digital.sample.ui.fragment.motion.MotionFragment"
+        android:label="MotionFragment"
+        tools:layout="@layout/motion" />
+    <action
+        android:id="@+id/action_global_motionFragment"
+        app:destination="@id/motionFragment" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="wee.digital.sample.ui.fragment.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/detail" />
+    <action
+        android:id="@+id/action_global_detailFragment"
+        app:destination="@id/detailFragment" />
+    <fragment
+        android:id="@+id/billPhoneFragment"
+        android:name="wee.digital.sample.ui.fragment.detail.phone.BillPhoneFragment"
+        android:label="BillPhoneFragment"
+        tools:layout="@layout/fragment_bill_phone" />
+    <action
+        android:id="@+id/action_global_billPhoneFragment"
+        app:destination="@id/billPhoneFragment" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="wee.digital.sample.ui.fragment.camera.CameraFragment"
+        android:label="CameraFragment"
+        tools:layout="@layout/camera" />
+    <action
+        android:id="@+id/action_global_cameraFragment"
+        app:destination="@id/cameraFragment" />
+
+
+</navigation>

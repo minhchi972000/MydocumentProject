@@ -1,0 +1,35 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+
+    apply from: 'versions.gradle'
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://maven.google.com" }
+        maven { url "https://jitpack.io" }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath deps.kotlin.gradle
+        classpath deps.google.services
+    }
+
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url "https://maven.google.com" }
+        maven { url "https://jitpack.io" }
+        maven{ url "https://egiintel.jfrog.io/artifactory/librealsense" }
+        //maven{ url "https://dl.bintray.com/intel-realsense/librealsense" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

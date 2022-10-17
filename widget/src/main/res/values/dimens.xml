@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="contentMargin8">@dimen/_6sdp</dimen>
+    <dimen name="contentMargin12">@dimen/_8sdp</dimen>
+    <dimen name="contentMargin16">@dimen/_12sdp</dimen>
+    <dimen name="contentMargin18">@dimen/_14sdp</dimen>
+    <dimen name="contentMargin24">@dimen/_16sdp</dimen>
+    <dimen name="contentMargin28">@dimen/_20sdp</dimen>
+    <dimen name="contentMargin32">@dimen/_24sdp</dimen>
+    <dimen name="contentMargin40">@dimen/_28sdp</dimen>
+    <dimen name="contentMargin48">@dimen/_32sdp</dimen>
+    <dimen name="contentMargin96">@dimen/_64sdp</dimen>
+
+    <dimen name="textSize9">@dimen/_6ssp</dimen>
+    <dimen name="textSize10">@dimen/_8ssp</dimen>
+    <dimen name="textSize12">@dimen/_10ssp</dimen>
+    <dimen name="textSize15">@dimen/_12ssp</dimen>
+    <dimen name="textSize18">@dimen/_15ssp</dimen>
+    <dimen name="textSize24">@dimen/_18ssp</dimen>
+    <dimen name="textSize28">@dimen/_24ssp</dimen>
+    <dimen name="textSize48">@dimen/_32ssp</dimen>
+
+    <dimen name="rowRadius">@dimen/_8sdp</dimen>
+    <dimen name="itemRadius">@dimen/_12sdp</dimen>
+    <dimen name="dialogRadius">@dimen/_14sdp</dimen>
+    <dimen name="inputViewMarginTop">@dimen/_14sdp</dimen>
+
+    <dimen name="rowSizeD2">@dimen/_23sdp</dimen>
+    <dimen name="rowSize2D3">@dimen/_36sdp</dimen>
+    <dimen name="rowSize">@dimen/_46sdp</dimen>
+    <dimen name="rowSizeX2">@dimen/_92sdp</dimen>
+
+    <dimen name="backButtonBottom">@dimen/_54sdp</dimen>
+    <dimen name="appBarSize">@dimen/_48sdp</dimen>
+    <dimen name="appBarSizeD2">@dimen/_24sdp</dimen>
+</resources>

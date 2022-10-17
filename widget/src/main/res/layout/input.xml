@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inputViewLayout"
+    style="@style/MatchWidth"
+    app:layoutDescription="@xml/motion_input">
+
+    <View
+        android:id="@+id/inputEditTextBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/drw_input_bg_enable"
+        app:layout_constraintBottom_toBottomOf="@id/inputEditText"
+        app:layout_constraintEnd_toEndOf="@id/inputEditText"
+        app:layout_constraintStart_toStartOf="@id/inputEditText"
+        app:layout_constraintTop_toTopOf="@id/inputEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/inputEditText"
+        style="@style/EditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/drw_input_border"
+        android:paddingStart="48dp"
+        android:paddingEnd="@dimen/contentMargin24"
+        android:textColor="#000000"
+        android:textColorHint="#D9D9D9"
+        android:textCursorDrawable="@drawable/drw_input_cursor"
+        android:textStyle="bold"
+        android:tint="@color/colorInputHint" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputTextViewPrefix"
+        style="@style/TextView"
+        android:layout_marginEnd="@dimen/contentMargin12"
+        android:textColor="@color/colorInputHint"
+        android:textSize="@dimen/textSize15"
+        app:layout_constraintBottom_toBottomOf="@id/inputEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/inputEditText" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/inputImageViewIcon"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:clickable="false"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_placeholder"
+        android:tint="@color/colorInputHint"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputTextViewTitle"
+        style="@style/TextView"
+        android:clickable="false"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textColor="@color/colorInputHint"
+        android:textSize="@dimen/textSize15"
+        tools:text="Hint text" />
+
+    <View
+        android:id="@+id/viewNoneOptional"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:background="@drawable/drw_oval"
+        android:backgroundTint="@color/color_error"
+        app:layout_constraintBottom_toBottomOf="@id/inputTextViewTitle"
+        app:layout_constraintStart_toEndOf="@id/inputTextViewTitle"
+        app:layout_constraintTop_toTopOf="@id/inputTextViewTitle" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/inputImageViewEnd"
+        android:layout_width="@dimen/rowSize"
+        android:layout_height="@dimen/rowSize"
+        android:background="@color/color_transparent"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/inputEditText"
+        app:layout_constraintEnd_toEndOf="@+id/inputEditText"
+        app:layout_constraintTop_toTopOf="@+id/inputEditText"
+        tools:src="@drawable/ic_close_flat" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputTextViewError"
+        style="@style/TextView.Error"
+        android:layout_width="0dp"
+        android:paddingStart="@dimen/contentMargin16"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputEditText"
+        tools:text="Aaaaa" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

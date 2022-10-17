@@ -1,0 +1,93 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+    id "kotlin-kapt"
+}
+
+android {
+    compileSdkVersion builds.compile_sdk
+    defaultConfig {
+        minSdkVersion builds.min_sdk
+        targetSdkVersion builds.target_sdk
+        consumerProguardFiles "consumer-rules.pro"
+        vectorDrawables.useSupportLibrary true
+    }
+    buildTypes {
+        all {
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+        release {
+            minifyEnabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+    maven { url "https://maven.google.com" }
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+
+    implementation fileTree(include: ["*.jar", "*aar"], dir: "libs")
+
+    //Kotlin
+    implementation deps.kotlin.stdlib
+    // concurrency pattern
+    implementation deps.kotlin.coroutines_core
+    implementation deps.kotlin.coroutines_android
+
+    //Android
+    implementation deps.android.activity
+    implementation deps.android.animation
+    implementation deps.android.annotation
+    implementation deps.android.appcompat
+    implementation deps.android.browser
+    implementation deps.android.cardview
+    implementation deps.android.constraintlayout
+    implementation deps.android.coordinatorlayout
+    implementation deps.android.corektx
+    implementation deps.android.fragment
+    implementation deps.android.multidex
+    implementation deps.android.recyclerview
+    implementation deps.android.security
+    implementation deps.android.swiperefreshlayout
+    implementation deps.android.vectordrawable
+    implementation deps.android.viewpager
+
+    //Google
+    implementation deps.google.material
+
+    //Paging recycler view adapter
+    implementation deps.paging.runtime
+
+    //Dimension resources
+    implementation deps.dimens.sdp
+    implementation deps.dimens.ssp
+
+    //Asynchronous image load
+    implementation deps.glide.glide
+    kapt deps.glide.compiler
+
+    //Date picker support before Jan 1,1970
+    implementation('com.wdullaer:materialdatetimepicker:4.2.3') {
+        exclude group: 'androidx.appcompat'
+        exclude group: 'androidx.recyclerview'
+    }
+
+    //Custom view
+    implementation deps.rounded_image_view
+
+}

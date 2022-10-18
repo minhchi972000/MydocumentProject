@@ -40,12 +40,20 @@
         app:destination="@id/billPhoneFragment" />
     <fragment
         android:id="@+id/cameraFragment"
-        android:name="wee.digital.sample.ui.fragment.camera.CameraFragment"
+        android:name="wee.digital.sample.ui.fragment.camera1.CaptureFragment"
         android:label="CameraFragment"
         tools:layout="@layout/camera" />
     <action
         android:id="@+id/action_global_cameraFragment"
         app:destination="@id/cameraFragment" />
+    <fragment
+        android:id="@+id/amountFragment"
+        android:name="wee.digital.sample.ui.fragment.amount.AmountFragment"
+        android:label="AmountFragment"
+        tools:layout="@layout/wallet_amount" />
+    <action
+        android:id="@+id/action_global_amountFragment"
+        app:destination="@id/amountFragment" />
 
 
 </navigation>

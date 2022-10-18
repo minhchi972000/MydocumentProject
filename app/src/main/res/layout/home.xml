@@ -47,6 +47,11 @@
                 style="@style/Widgets.Button"
                 android:text="Show selectable dialog" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/viewAmount"
+                style="@style/Widgets.Button"
+                android:text="Show Amount dialog" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/viewListBank"
                 style="@style/RecyclerView"

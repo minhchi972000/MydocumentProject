@@ -101,7 +101,7 @@ class HoleView @JvmOverloads constructor(
         //configure background color
         val backgroundAlpha = 0.8
         paint.color = ColorUtils.setAlphaComponent(
-            ContextCompat.getColor(this.context, R.color.colorBlack),
+            ContextCompat.getColor(this.context, R.color.color_black),
             (255 * backgroundAlpha).toInt()
         )
 

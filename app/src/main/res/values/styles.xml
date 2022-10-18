@@ -126,4 +126,14 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="Fragment.BackButton">
+        <item name="android:layout_width">@dimen/_50sdp</item>
+        <item name="android:layout_height">@dimen/_50sdp</item>
+        <item name="android:padding">@dimen/_18sdp</item>
+        <item name="android:src">@drawable/ic_arrow_left</item>
+        <item name="android:scaleType">fitStart</item>
+        <item name="android:rotation">270</item>
+        <item name="android:tint">#232323</item>
+    </style>
+
 </resources>

@@ -20,7 +20,7 @@ class HomeFragment : MainFragment<HomeBinding>() {
     override fun inflating(): Inflating = HomeBinding::inflate
 
     override fun onViewCreated() {
-        addClickListener(vb.viewAlert,vb.viewCamera, vb.viewSelectable)
+        addClickListener(vb.viewAlert,vb.viewCamera, vb.viewSelectable,vb.viewAmount)
 
         adapter.bind(vb.viewListBank).set(vm.listBankName).onItemClick = {
             // childNavigate(HomeGraph.toReview) {
@@ -68,6 +68,15 @@ class HomeFragment : MainFragment<HomeBinding>() {
                     )
                     onItemSelected = {
                         toast("${it.text} has been selected")
+                    }
+                }
+            }
+            vb.viewAmount -> {
+                showAlert {
+                    title = "Custom amount dialog"
+                    message = "You can dismiss by touch outside"
+                    acceptOnClick = {
+                        mainNavigate(R.id.amountFragment)
                     }
                 }
             }

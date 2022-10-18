@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_5sdp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imgBgCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/bg_card_cash_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h, 335:108"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="@dimen/_12sdp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtCashIn"
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="10sp"
+        android:background="@null"
+        android:focusable="true"
+        android:hint="0,000"
+        android:imeOptions="actionDone"
+        android:inputType="numberDecimal"
+        android:textColor="@color/color_white"
+        android:textColorHint="#B3FFFFFF"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintStart_toStartOf="@id/imgBgCard"
+        app:layout_constraintTop_toTopOf="@id/imgBgCard" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:text="đ"
+        android:textColor="#B3FFFFFF"
+        app:layout_constraintStart_toEndOf="@id/edtCashIn"
+        app:layout_constraintTop_toTopOf="@id/edtCashIn" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBalance"
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="Số dư:"
+        android:textColor="#B3FFFFFF"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@id/imgBgCard"
+        app:layout_constraintStart_toStartOf="@id/imgBgCard" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPrice"
+        style="@style/TextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:text="40,000,000d"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvBalance"
+        app:layout_constraintStart_toEndOf="@id/tvBalance" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/viewImageThumbnail"
+        android:layout_width="@dimen/_54sdp"
+        android:layout_height="@dimen/_54sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:src="@drawable/ic_user_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_minus10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/bg_corner_4"
+        android:backgroundTint="@color/color_white"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/viewImageThumbnail"
+        app:layout_constraintStart_toStartOf="@id/viewImageThumbnail" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/viewUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:text="Username"
+        android:textColor="@color/color_white"
+        app:layout_constraintBottom_toBottomOf="@id/imgBgCard"
+        app:layout_constraintEnd_toEndOf="@id/imgBgCard" />
+</androidx.constraintlayout.widget.ConstraintLayout>
